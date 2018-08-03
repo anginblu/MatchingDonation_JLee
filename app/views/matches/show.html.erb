@@ -1,0 +1,5 @@
+<h2>Match by <%=@match.email %></h2>
+
+Goal: <%= number_to_currency @match.max_amount %><br/>
+Matched to Date: <%= number_to_currency @match.matched_amount %><br/>
+Remaining: <%= number_to_currency @match.remaining %><br/>

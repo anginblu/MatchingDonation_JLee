@@ -1,0 +1,7 @@
+<h4>List of all Donations</h4>
+
+<% @donations.each do |donation| %>
+  <li>
+    <%= link_to "#{donation.email}", donation %> for <%= number_to_currency donation.amount %>
+  </li>
+<% end %>

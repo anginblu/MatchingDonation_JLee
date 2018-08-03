@@ -1,0 +1,13 @@
+<h4>List of all active Matches</h4>
+  <% @matches.where(active: true).each do |match| %>
+    <li>
+      <%= link_to "#{match.email}", match %> for <%= number_to_currency match.max_amount %>
+    </li>
+  <% end %>
+
+<h4>List of completed Matches</h4>
+  <% @matches.where(active: false).each do |match| %>
+    <li>
+      <%= link_to "#{match.email}", match %> for <%= number_to_currency match.max_amount %>
+    </li>
+<% end %>

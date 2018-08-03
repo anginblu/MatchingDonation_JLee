@@ -1,0 +1,32 @@
+<%= form_for @match do |f| %>
+  <%= render 'matches/error'%>
+<p>
+ <%= f.label :email %><br>
+ <%= f.text_field :email %>
+</p>
+
+<p>
+ <%= f.label :max_amount %><br>
+ <%= f.text_area :max_amount %>
+</p>
+
+<p>
+ <%= f.label :ratio %><br>
+ <%= f.text_area :ratio %>
+</p>
+
+<p>
+ <%= f.label :fixed_match %><br>
+ <%= f.text_area :fixed_match %>
+</p>
+
+<p>
+ <%= f.label :active %><br>
+ <%= f.check_box :active, {}, "true", "false" %> Go Active
+</p>
+
+
+<p>
+ <%= f.submit %>
+</p>
+<% end %>

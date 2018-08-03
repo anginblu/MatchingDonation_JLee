@@ -1,0 +1,10 @@
+<% unless @match.errors.empty? %>
+  <div id="field_with_errors">
+    <h3><%= pluralize(@match.errors.count, "error") %> prohibited this object from being saved:</h3>
+    <ul>
+    <% @match.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
