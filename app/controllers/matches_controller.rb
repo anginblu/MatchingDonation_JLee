@@ -26,7 +26,7 @@ class MatchesController < ApplicationController
 
   private
     def match_params
-      params.require(:match).permit(:email, :max_amount, :active, :ratio, :fixed_match)
+      params.require(:match).permit(:email, :max_amount, :ratio, :fixed_match)
     end
 
 end

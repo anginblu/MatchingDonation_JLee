@@ -5,7 +5,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.string :email
       t.boolean :active
       t.decimal :ratio
-      
+
       t.timestamps
     end
   end
