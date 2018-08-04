@@ -10,21 +10,25 @@
  <%= f.text_area :max_amount %>
 </p>
 
-<p>
- <%= f.label :ratio %><br>
- <%= f.text_area :ratio %>
-</p>
+<div id="Matching">
 
-<p>
- <%= f.label :fixed_match %><br>
- <%= f.text_area :fixed_match %>
-</p>
+  <p>
+    If you want to match by ratio (percentage of donation),
+    <input type="button" value="Click" class="ratio" id="ratio" />
+  </p>
 
-<p>
- <%= f.label :active %><br>
- <%= f.check_box :active, {}, "true", "false" %> Go Active
-</p>
+  <div class="ratio">
+  </div>
 
+  <p>
+    If you want to match by fixed amount per donation,
+      <input type="button" value="Click" class="fixed" id="fixed" />
+  </p>
+
+  <div class="fixed">
+  </div>
+
+</div>
 
 <p>
  <%= f.submit %>

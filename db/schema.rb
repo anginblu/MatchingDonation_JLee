@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_155305) do
   create_table "matches", force: :cascade do |t|
     t.decimal "max_amount", precision: 10, scale: 2
     t.string "email"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.decimal "ratio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
