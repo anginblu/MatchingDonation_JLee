@@ -8,7 +8,7 @@ class Match < ApplicationRecord
   validate :matching_formula_present
 
   def matching_formula_present
-    if !ratio.present? || !fixed_match.present?
+    if !ratio.present? && !fixed_match.present?
       errors.add(:ratio, "Ratio / Fixed Amount for matching can't both be blank.")
     end
   end
