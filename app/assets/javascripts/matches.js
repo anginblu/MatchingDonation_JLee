@@ -8,8 +8,8 @@ function attachMatchesListeners() {
 }
 
 function addRatio(){
-  var input = $('<input name="match[ratio]" id = "match_value" value = "0.5">')
-  var instruction = "Enter the ratio for matching donation: e.g., "
+  var input = $('<input type="number" min="0" max="100" name="match[ratio]" id = "match_value" value = "50">')
+  var instruction = '&#8594;<font size="2.5">Enter the percentage amount for matching donation (1-100): </font>'
 
   $('div.fixed').html("");
   $('div.ratio').html(instruction);
@@ -18,8 +18,8 @@ function addRatio(){
 }
 
 function addFixed(){
-  var input = $('<input name="match[fixed_match]" value = "10">')
-  var instruction = "Enter the amount in dollar for matching per donation: e.g., $ "
+  var input = $('<input type="number" min="1" name="match[fixed_match]" value = "10">')
+  var instruction = '&#8594;<font size="2.5">Enter the amount in dollar for matching per donation: $ </font>'
 
   $('div.ratio').html("");
   $('div.fixed').html(instruction);

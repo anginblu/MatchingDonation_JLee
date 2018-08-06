@@ -6,6 +6,7 @@ class Match < ApplicationRecord
   validates :email, presence: true
   validates :max_amount, presence: true
   validate :matching_formula_present
+  validates :ratio, numericality: { less_than_or_equal_to: 100,  only_integer: true }
 
   def matching_formula_present
     if !ratio.present? && !fixed_match.present?
@@ -16,7 +17,7 @@ class Match < ApplicationRecord
   def matched_amount
     if !self.ratio.nil?
       sum = self.donations.sum(:amount)
-      result = sum * self.ratio
+      result = sum * self.ratio.to_f / 100
     elsif self.fixed_match.present?
       result = self.donations.length * fixed_match.to_i
     else

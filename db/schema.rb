@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_155305) do
+ActiveRecord::Schema.define(version: 2018_08_06_125450) do
 
   create_table "donations", force: :cascade do |t|
     t.decimal "amount", precision: 10, scale: 2
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_155305) do
     t.decimal "max_amount", precision: 10, scale: 2
     t.string "email"
     t.boolean "active", default: true
-    t.decimal "ratio"
+    t.integer "ratio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fixed_match"
