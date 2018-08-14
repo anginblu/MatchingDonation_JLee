@@ -15,7 +15,7 @@ class Match < ApplicationRecord
   end
 
   def matched_amount
-    if !self.ratio.nil?
+    if !self.ratio.nil? && self.ratio != 0
       sum = self.donations.sum(:amount)
       result = sum * self.ratio.to_f / 100
     elsif self.fixed_match.present?
