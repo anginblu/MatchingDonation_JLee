@@ -12,6 +12,20 @@
 </p>
 
 <p>
+ <%= f.label :recurring %><br>
+ <%= f.check_box :recurring, {}, true, false %>
+</p>
+
+<p>
+ <%= f.label :recurring_period %><br>
+ <%= f.collection_select :recurring_period, ["yearly", "monthly"], :to_s, :to_s, include_blank: false %>
+</p>
+<p>
+ <%= f.label :recurring_length %><br>
+ <%= f.number_field :recurring_length, min: 1 %>
+</p>
+
+<p>
  <%= f.submit %>
 </p>
 <% end %>

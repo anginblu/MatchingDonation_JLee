@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :matches, only: [:index, :show, :new, :create]
   #show the final matching amount for each matching account
 
+  resources :challenges, only: [:index, :show, :new, :create]
+  #show the challenge amount for each challenge account
+
   root 'home#home'
 
 end

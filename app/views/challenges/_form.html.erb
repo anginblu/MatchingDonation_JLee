@@ -1,0 +1,36 @@
+<%= form_for @challenge do |f| %>
+  <%= render 'challenges/error'%>
+<p>
+ <%= f.label :email %><br>
+ <%= f.text_field :email %>
+</p>
+
+<p>
+ <%= f.label :amount %><br>
+ <%= f.text_area :amount %>
+</p>
+
+<div id="Challenge">
+
+  <p>
+    If you want to challenge based on the number of donations,
+    <input type="button" value="Click" class="donation_count" id="donation_count" />
+  </p>
+
+  <div class="count">
+  </div>
+
+  <p>
+    If you want to challenge based on the amount of donations,
+      <input type="button" value="Click" class="total_donation" id="total_donation" />
+  </p>
+
+  <div class="total">
+  </div>
+
+</div>
+
+<p>
+ <%= f.submit %>
+</p>
+<% end %>

@@ -1,3 +1,7 @@
 <h2>Donation from <%=@donation.email %></h2>
 
-Amount: $<%= @donation.amount %>
+Amount: $<%= @donation.amount %><br/>
+<% if @donation.recurring %>
+  Total amount of installments to date: $<%= @donation.installments_made %><br/>
+  Remaining number of installments: <%= @donation.remaining_installments %>
+<% end %>

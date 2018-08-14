@@ -1,0 +1,9 @@
+<h2>Challenge by <%=@challenge.email %></h2>
+
+Challenge Amount: <%= number_to_currency @challenge.amount %><br/>
+Challenge Goal:
+  <% if @challenge.challenge_based_on_total? %>
+    when the total donation amount reaches <%= number_to_currency @challenge.total_donation %>.<br/>
+  <% else %>
+    when the total donation count reaches <%= @challenge.donation_count %>.<br/>
+  <% end %>

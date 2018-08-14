@@ -10,13 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_143343) do
+ActiveRecord::Schema.define(version: 2018_08_14_203416) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.decimal "amount", precision: 10, scale: 2
+    t.string "email"
+    t.boolean "active", default: true
+    t.integer "donation_count", default: 0
+    t.decimal "total_donation", precision: 10, scale: 2, default: "0.0"
+  end
+
+  create_table "challenges_donations", force: :cascade do |t|
+    t.integer "challenge_id"
+    t.integer "donation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_challenges_donations_on_challenge_id"
+    t.index ["donation_id"], name: "index_challenges_donations_on_donation_id"
+  end
 
   create_table "donations", force: :cascade do |t|
     t.decimal "amount", precision: 10, scale: 2
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "recurring", default: false
+    t.string "recurring_period"
+    t.integer "recurring_length"
+  end
+
+  create_table "installments", force: :cascade do |t|
+    t.integer "donation_id"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donation_id"], name: "index_installments_on_donation_id"
   end
 
   create_table "matches", force: :cascade do |t|
